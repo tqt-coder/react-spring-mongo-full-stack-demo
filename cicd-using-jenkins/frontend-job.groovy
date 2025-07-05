@@ -18,9 +18,9 @@ pipeline {
         }
         stage('Upload image to ECR') {
             steps {
-                sh 'aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 430950558682.dkr.ecr.ap-southeast-1.amazonaws.com'
+                sh 'aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 909927813182.dkr.ecr.ap-southeast-1.amazonaws.com'
 
-                sh 'docker tag final-assignment-frontend:latest ${FULL_IMAGE}'
+                sh 'docker tag devops-final-assignment-1-frontend:latest ${FULL_IMAGE}'
                 
                 sh 'docker push ${FULL_IMAGE}'
             }
